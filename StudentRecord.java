@@ -81,15 +81,17 @@ public class StudentRecord{
   //toString
   public String toString(){
     return ("Quizzes 1,2,3: " + m_quiz1*10+"%, "+m_quiz2*10+"%, "+m_quiz3*10+"%" + "\n" +
-            "Midterm:  " + m_midterm+"%"+ "\nOverall:   " + m_overall+"%" + "\nLetter Grade:  "+m_letter+"\n");
+            "Midterm:  " + m_midterm+"%"+ "\nFinal Exam:   " + m_final+"%"+ "\nOverall Grade:   " + m_overall+"%" + "\nLetter Grade:  "+m_letter+"\n");
   }
 
   //equals
-  /*public boolean equals(StudentRecord x){
 
+  public boolean equals(StudentRecord student2){
 
+    return (m_quiz1 == student2.getQuiz1() && m_quiz2 == student2.getQuiz2() && m_quiz3 == student2.getQuiz3()
+         && m_midterm == student2.getMidterm() && m_final == student2.getFinnal());
   }
-*/
+
 
   //Computes overall grade
   public double computeNumericScore(StudentRecord x){
@@ -155,42 +157,44 @@ public class StudentRecord{
 
     //Here I use overloaded constructor
     StudentRecord S1 = new StudentRecord(9,7,10,85,93);
-    System.out.println(S1.getQuiz1());
+    /*System.out.println(S1.getQuiz1());
     System.out.println(S1.getQuiz2());
     System.out.println(S1.getQuiz3());
     System.out.println(S1.getMidterm());
-    System.out.println(S1.getFinnal());
+    System.out.println(S1.getFinnal());*/
 
     //Here I use default constructor but set new values to test mutators and accessors
     StudentRecord S2 = new StudentRecord();
     S2.setQuiz1(8);
     S2.setQuiz2(9.5);
     S2.setQuiz3(9);
-    S2.setMidterm(80);
+    S2.setMidterm(89);
     S2.setFinnal(95);
 
-    System.out.println(S2.getQuiz1());
-    System.out.println(S2.getQuiz2());
-    System.out.println(S2.getQuiz3());
-    System.out.println(S2.getMidterm());
-    System.out.println(S2.getFinnal());
+    System.out.println("\nHere is the infomation regarding the first student: ");
 
-    //Test to make sure computeNumericScore works
-    System.out.println("\n"+S1.getOverall());
-    //Compute actual score
-    System.out.println("The student's overall weighted average is:  " + S1.computeNumericScore(S1));
-    //Will notice new, correct score as the previous value was defaulted at 0
-    System.out.println(S1.getOverall());
+    //Compute actual Numeric score
+    System.out.println("\nThe student's overall weighted average is:  " + S1.computeNumericScore(S1));
 
-    //Same test as earlier but with letter grade
-    System.out.println("\n"+S1.getLetter());
     //Compute Actual letter grade
     System.out.println("The student's letter grade is:  " + S1.letterGrade(S1));
-    //Will see new, correct letter grade
-    System.out.println(S1.getLetter());
+
+    //Prints the 1st student's overall statistics
+    System.out.println("\nHere are the statistics" + "\n" + S1.toString());
+
+    System.out.println("\n\nHere is the infomation regarding the second student");
+
+    //Compute actual Numeric score
+    System.out.println("\nThe student's overall weighted average is:  " + S2.computeNumericScore(S2));
+
+    //Compute Actual letter grade
+    System.out.println("The student's letter grade is:  " + S2.letterGrade(S2));
 
     //Prints the student's overall statistics
-    System.out.println("\n" + S1.toString());
+    System.out.println("\nHere are the statistics" + "\n" + S2.toString());
+
+    //See if the 2 students are equal
+    System.out.println("\nDo students 1 and 2 have the same grades?" + " " + S1.equals(S2));
   }
 
 }
