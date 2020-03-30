@@ -157,11 +157,6 @@ public class StudentRecord{
 
     //Here I use overloaded constructor
     StudentRecord S1 = new StudentRecord(9,7,10,85,93);
-    /*System.out.println(S1.getQuiz1());
-    System.out.println(S1.getQuiz2());
-    System.out.println(S1.getQuiz3());
-    System.out.println(S1.getMidterm());
-    System.out.println(S1.getFinnal());*/
 
     //Here I use default constructor but set new values to test mutators and accessors
     StudentRecord S2 = new StudentRecord();
@@ -171,6 +166,7 @@ public class StudentRecord{
     S2.setMidterm(89);
     S2.setFinnal(95);
 
+    //Output first student's info
     System.out.println("\nHere is the infomation regarding the first student: ");
 
     //Compute actual Numeric score
@@ -182,19 +178,17 @@ public class StudentRecord{
     //Prints the 1st student's overall statistics
     System.out.println("\nHere are the statistics" + "\n" + S1.toString());
 
-    System.out.println("\n\nHere is the infomation regarding the second student");
+    //Output second student's info
+    System.out.println("\nHere is the infomation regarding the second student");
 
-    //Compute actual Numeric score
     System.out.println("\nThe student's overall weighted average is:  " + S2.computeNumericScore(S2));
 
-    //Compute Actual letter grade
     System.out.println("The student's letter grade is:  " + S2.letterGrade(S2));
 
-    //Prints the student's overall statistics
     System.out.println("\nHere are the statistics" + "\n" + S2.toString());
 
     //See if the 2 students are equal
-    System.out.println("\nDo students 1 and 2 have the same grades?" + " " + S1.equals(S2));
+    System.out.println("\nDo students 1 and 2 have the same grades?" + " " + S1.equals(S2) + "\n");
   }
 
 }
