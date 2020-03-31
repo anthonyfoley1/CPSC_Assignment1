@@ -12,10 +12,8 @@ public class Harmonic {
     //This for loop will perform/print the sequence to 'n' and stop there
     for (int i=1; i<=n; ++i) {
       sumNumbers+=(1.0/i);
-      System.out.println(sumNumbers);
     }
 
-    System.out.println("\nThe sum is: ");
     return sumNumbers;
   }
 
@@ -31,17 +29,27 @@ public class Harmonic {
 
     //Here the recursion subtracts 1 from n until it reaches 1
     else {
-    System.out.println(sumNumbers+=(1.0/n) + Harmonic.calcRecursiveHarmonic(n-1));
+    sumNumbers+=(1.0/n) + Harmonic.calcRecursiveHarmonic(n-1);
     return sumNumbers;
     }
   }
 
   public static void main(String[] args) {
 
-    System.out.println("\nHere is the Harmonic Sequence using the for loop printed out to the 20th sequence: ");
-    System.out.println("\n" + Harmonic.calcIterativeHarmonic(20));
+    //Print using for-loop
+    System.out.println("\nHere is the Harmonic Sequence using the for loop printing the first 20 values: \n");
 
-    System.out.println("\nHere is the Harmonic Sequence using Recursion printed out to the 20th sequence: ");
-    System.out.println("\nThe sum is:  \n\n" + Harmonic.calcRecursiveHarmonic(20) + "\n");
+    //Use for loop to print 20 values
+    for (int i = 1;i<=20 ;++i) {
+    System.out.println(Harmonic.calcIterativeHarmonic(i));
+    }
+
+    //Print using recursion and use another for-loop to print 20 values
+    System.out.println("\nHere is the Harmonic Sequence using Recursion printing the first 20 values: \n");
+
+    for (int j = 1;j<=20 ;++j) {
+    System.out.println(Harmonic.calcRecursiveHarmonic(j));
+    }
+    System.out.println();
   }
 }
