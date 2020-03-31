@@ -1,5 +1,9 @@
-//Anthony Foley 2313898
-//Stevens 231 Class --> Assignment Part 2
+// Anthony Foley
+// 2313898
+// afoley@chapman.edu
+// CPSC-231-01
+// Assignment MP2
+// StudentRecord class
 
 public class StudentRecord{
 
@@ -85,7 +89,6 @@ public class StudentRecord{
   }
 
   //equals
-
   public boolean equals(StudentRecord student2){
 
     return (m_quiz1 == student2.getQuiz1() && m_quiz2 == student2.getQuiz2() && m_quiz3 == student2.getQuiz3()

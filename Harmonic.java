@@ -1,12 +1,16 @@
-//Anthony Foley 2313898
-//Stevens 231 Recursion --> Assignment Part 1
+// Anthony Foley
+// 2313898
+// afoley@chapman.edu
+// CPSC-231-01
+// Assignment MP2
+// Harmonic
 
 public class Harmonic {
 
 //This method will print harmonic series using for loop
   public static double calcIterativeHarmonic(int n){
 
-    //I will add numbers to answer variable to check math later on
+    //Here I declare + initialize variable
     double sumNumbers = 0.00;
 
     //This for loop will perform/print the sequence to 'n' and stop there
